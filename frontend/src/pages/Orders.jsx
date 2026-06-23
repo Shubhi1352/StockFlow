@@ -50,7 +50,7 @@ export default function Orders() {
                             <td>{o.id}</td><td>{o.status}</td><td>₹{o.totalAmount}</td>
                             <td>{new Date(o.createdAt).toLocaleDateString()}</td>
                             <td>
-                                {o.status === 'PENDING' &&
+                                {(o.status === 'PENDING' || o.status === 'PLACED') &&
                                     <button onClick={() => handleCancel(o.id)} style={styles.cancelBtn}>Cancel</button>}
                             </td>
                         </tr>

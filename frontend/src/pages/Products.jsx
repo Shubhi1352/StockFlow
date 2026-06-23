@@ -58,12 +58,12 @@ export default function Products() {
             </form>
             <table style={styles.table}>
                 <thead>
-                    <tr><th>Name</th><th>SKU</th><th>Price</th><th>Stock</th><th>Category</th><th>Actions</th></tr>
+                    <tr><th>ID</th><th>Name</th><th>SKU</th><th>Price</th><th>Stock</th><th>Category</th><th>Actions</th></tr>
                 </thead>
                 <tbody>
                     {products.map(p => (
                         <tr key={p.id}>
-                            <td>{p.name}</td><td>{p.sku}</td><td>₹{p.price}</td><td>{p.currentStock}</td><td>{p.category}</td>
+                            <td>{p.id}</td><td>{p.name}</td><td>{p.sku}</td><td>₹{p.price}</td><td>{p.currentStock}</td><td>{p.category}</td>
                             <td>
                                 <button onClick={() => handleEdit(p)} style={styles.editBtn}>Edit</button>
                                 <button onClick={() => handleDelete(p.id)} style={styles.deleteBtn}>Delete</button>
