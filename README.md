@@ -27,6 +27,11 @@ Built with **Node/Express**, **Sequelize + PostgreSQL**, and a **React +�
 
 ---
 
+## Database Schema
+
+- ERD Diagram: `docs/erd.png`
+- SQL Schema: `schema.sql`
+
 ### 🚀 Quick Start / Installation  
 
 > **Prerequisites**  
