@@ -1,5 +1,8 @@
 const User = require('./User');
 const Product = require('./Product');
+const StockHistory = require('./StockHistory');
+const Order = require('./Order');
+const OrderItem = require('./OrderItem');
 
 User.hasMany(Product, { foreignKey: 'createdBy' });
 Product.belongsTo(User, { foreignKey: 'createdBy', as: 'creator' });

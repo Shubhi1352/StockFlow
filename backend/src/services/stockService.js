@@ -22,10 +22,16 @@ const applyStockChange = async ({ productId, type, quantity, reason, userId, tra
     if (!product) {
         throw new AppError('Product not found', 404);
     }
-
+    const qty = Number(quantity);
+    if (Number.isNaN(qty)) {
+        throw new AppError('Quantity must be a valid number', 400);
+    }
+    if (qty <= 0) {
+        throw new AppError('Quantity must be positive', 400);
+    }
     const previousStock = product.currentStock;
     const isIncrease = INCREASING_TYPES.includes(type);
-    const newStock = isIncrease ? previousStock + quantity : previousStock - quantity;
+    const newStock = isIncrease ? previousStock + qty : previousStock - qty;
 
     if (newStock < 0) {
         throw new AppError('Insufficient stock for this operation', 400);
