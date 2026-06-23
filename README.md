@@ -1,4 +1,3 @@
----  
 
 ## 📖 StockFlow – Inventory Management System  
 
